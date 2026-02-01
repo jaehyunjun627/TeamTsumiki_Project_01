@@ -38,6 +38,26 @@
             <% } %>
         </div>
         
+        
+<%--         <div class="progress-summary">
+    <div class="progress-text">
+        학습 진행도: <%= progress.getCompletedCount() %> / <%= totalGroups %> 그룹
+    </div>
+    <div class="progress-text">
+        학습한 한자: <%= progress.getLearnedKanjiCount() %>개
+    </div>
+    
+    <% if (progress.getLearnedKanjiCount() > 0) { %>
+        <button class="test-button" onclick="location.href='<%= contextPath %>/test?level=<%= level %>'">
+            학습한 한자 테스트하기
+        </button>
+    <% } %>
+</div> --%>
+        
+        
+        
+        
+        
         <div class="group-grid">
             <% for (int i = 1; i <= totalGroups; i++) { %>
                 <% 
@@ -51,5 +71,7 @@
             <% } %>
         </div>
     </div>
+    
+    
 </body>
 </html>
