@@ -4,7 +4,7 @@ package model;
 public class KanjiDTO {
     private String kanji;
     private int level;
-    private String korean;  // meaning에서 korean으로 변경
+    private String korean;
     private String unyomi_1;
     private String unyomi_2;
     private String unyomi_3;
