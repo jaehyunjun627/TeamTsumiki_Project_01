@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-
+    <link rel="stylesheet" type="text/css" href="../projectCss/project.css">
 </head>    
 <body>
     <%
@@ -24,27 +24,28 @@
     <center>
     <div class="signup-container">
         <h3>회원가입</h3>
+        <h1>재미있게 즐기는 일본어 공부, 지금 바로 시작해 보세요 !</h1>
         
         <form id="signupForm" method="post">
             <div class="singup-form-group">
                 <label for="username">닉네임</label>
                 <input type="text" id="username" name="username" placeholder="닉네임" required>
-            </div><br>
+            </div>
 
             <div class="singup-form-group">
                 <label for="email">이메일</label>
                 <input type="email" id="email" name="email" placeholder="이메일" required>
-        </div><br>
+        </div>
 
             <div class="singup-form-group">
                 <label for="password">비밀번호</label>
                 <input type="password" id="password" name="password" placeholder="비밀번호" required>
-            </div><br>
+            </div>
 
             <div class="singup-form-group">
                 <label for="confirmPassword">비밀번호 확인</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="비밀번호 확인" required>
-            </div><br>
+            </div>
 
             <button type="submit" class="btn-submit">가입하기</button>
         </form><br>
