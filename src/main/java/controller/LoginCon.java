@@ -53,10 +53,10 @@ public class LoginCon extends HttpServlet {
         }
 
         // ========== 2. 관리자 계정 체크 (DB 연결 없이) ==========
-        // 관리자 아이디: admin / 비밀번호: admin123
-        if ("admin".equals(userID) && "admin123".equals(userPW)) {
+        // 관리자 아이디: admin@admin.com / 비밀번호: 123
+        if ("admin@admin.com".equals(userID) && "123".equals(userPW)) {
             AccountDTO dto = new AccountDTO();
-            dto.setUserID("admin");
+            dto.setUserID("admin@admin.com");
             dto.setNickname("관리자");
             dto.setEmail("admin@admin.com");
 
