@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <title>일본어 한자 공부장</title>
-    <link rel="stylesheet" href="<%= contextPath %>/css/style.css">
+    <link rel="stylesheet" href="<%= contextPath %>/css/style.css?v=2">
 </head>
 <body>
     <div class="container">
