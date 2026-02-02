@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    background: linear-gradient(135deg, #ffd6e8 0%, #e8d4f5 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    padding: 50px 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.main-title {
+    color: #e91e63;
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.main-subtitle {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.level-section {
+    margin-bottom: 30px;
+}
+
+.level-section h2,
+.count-section h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.level-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.level-button {
+    padding: 15px 30px;
+    border: 2px solid #e91e63;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: white;
+    color: #e91e63;
+    min-width: 80px;
+}
+
+.level-button:hover {
+    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+.count-section {
+    margin-bottom: 30px;
+}
+
+.count-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.count-button {
+    padding: 25px 30px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: white;
+    min-width: 150px;
+}
+
+.count-button:hover {
+    border-color: #e91e63;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.2);
+}
+
+.count-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e91e63;
+    margin-bottom: 8px;
+}
+
+.count-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+.back-section {
+    margin-top: 30px;
+}
+
+.back-button {
+    padding: 12px 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.back-button:hover {
+    background: #f5f5f5;
+    border-color: #999;
+}
+
+.complete-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+    margin: 0 auto 30px;
+}
+
+.progress-info {
+    margin: 30px 0;
+}
+
+.progress-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.progress-label {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.progress-number {
+    color: #e91e63;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.congrats-message {
+    font-size: 18px;
+    color: #4caf50;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.menu-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.continue-button {
+    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    color: white;
+}
+
+.continue-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+.home-button {
+    background: white;
+    color: #666;
+    border: 2px solid #e0e0e0;
+}
+
+.home-button:hover {
+    background: #f5f5f5;
+    border-color: #999;
+}
