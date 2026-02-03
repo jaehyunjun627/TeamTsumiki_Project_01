@@ -36,7 +36,11 @@ public class LoginCon extends HttpServlet {
             response.sendRedirect("login.jsp?error=empty");
             return;
         }
+<<<<<<< HEAD
         
+=======
+                 
+>>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
         // ★ 관리자 계정 체크 (DB 연결 없이)
         // ID: admin@admin.com
         // password: 123
