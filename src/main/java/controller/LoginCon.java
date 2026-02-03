@@ -56,7 +56,7 @@ public class LoginCon extends HttpServlet {
             return;
         }
 
-        // 일반 회원 DB 체크
+        // 일반 회원 DB 체크 
         AccountDAO dao = new AccountDAO();
         int result = dao.loginCheck(userID, userPW);
 
