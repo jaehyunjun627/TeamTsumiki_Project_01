@@ -36,12 +36,8 @@ public class LoginCon extends HttpServlet {
             response.sendRedirect("login.jsp?error=empty");
             return;
         }
-<<<<<<< HEAD
-        
-=======
-                 
->>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
-        // ★ 관리자 계정 체크 (DB 연결 없이)
+
+        // 관리자 계정 체크 (DB 연결 없이)
         // ID: admin@admin.com
         // password: 123
         if ("admin@admin.com".equals(userID) && "123".equals(userPW)) {
@@ -49,10 +45,10 @@ public class LoginCon extends HttpServlet {
             dto.setUserID("admin@admin.com");
             dto.setNickname("관리자");
             dto.setEmail("admin@admin.com");
-            
+
             HttpSession session = request.getSession();
             session.setAttribute("loginUser", dto);
-            response.sendRedirect("main.jsp");
+            response.sendRedirect("main");
             return;
         }
 
@@ -64,7 +60,7 @@ public class LoginCon extends HttpServlet {
             AccountDTO dto = dao.getMember(userID);
             HttpSession session = request.getSession();
             session.setAttribute("loginUser", dto);
-            response.sendRedirect("main.jsp");
+            response.sendRedirect("main");
         } else if (result == 0) {
             response.sendRedirect("login.jsp?error=pw");
         } else {
