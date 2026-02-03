@@ -25,7 +25,7 @@
             <h2>한자 공부</h2>
             <p class="sub-text">단계별로 탄탄하게!</p>
             <div class="level-buttons">
-                <button class="level-btn n5" onclick="location.href='sectorSelect.jsp?level=N5'">N5</button>
+                <button class="level-btn n5" onclick="location.href='startGroup.jsp?level=N5'">N5</button>
                 <button class="level-btn n4" onclick="location.href='sectorSelect.jsp?level=N4'">N4</button>
                 <button class="level-btn n3" onclick="location.href='sectorSelect.jsp?level=N3'">N3</button>
                 <button class="level-btn n2" onclick="location.href='sectorSelect.jsp?level=N2'">N2</button>
