@@ -1,4 +1,4 @@
-// src/repository/KanjiRepository.java
+ // src/repository/KanjiRepository.java
 package repository;
 
 import java.util.Collections;

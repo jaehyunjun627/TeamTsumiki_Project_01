@@ -26,3 +26,14 @@ public class StudyManager {
         return allKanji.subList(startIndex, endIndex);
     }
 }
+
+//N5 전체 한자 (10개)
+//List<KanjiDTO> allKanji = KanjiRepository.findByLevel("N5");
+
+//그룹 1번만 가져오기
+//List<KanjiDTO> group1 = StudyManager.getKanjiByGroup(allKanji, 1);
+//→ 결과: [場, 会] (2개)
+
+//그룹 2번만 가져오기
+//List<KanjiDTO> group2 = StudyManager.getKanjiByGroup(allKanji, 2);
+//→ 결과: [事, 思] (2개)
