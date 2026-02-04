@@ -13,7 +13,7 @@
     }
     
     // ========== 오늘 날짜 정보 ==========
-    Calendar cal = Calendar.getInstance();
+    Calendar cal = Calendar.getInstance();　
     int todayYear = cal.get(Calendar.YEAR);
     int todayMonth = cal.get(Calendar.MONTH) + 1; // 0부터 시작하므로 +1
     int todayDay = cal.get(Calendar.DAY_OF_MONTH);
