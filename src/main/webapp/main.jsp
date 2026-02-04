@@ -13,13 +13,13 @@
     }
     
     // ========== 오늘 날짜 정보 ==========
-    Calendar cal = Calendar.getInstance();　
+    Calendar cal = Calendar.getInstance();
     int todayYear = cal.get(Calendar.YEAR);
     int todayMonth = cal.get(Calendar.MONTH) + 1; // 0부터 시작하므로 +1
     int todayDay = cal.get(Calendar.DAY_OF_MONTH);
     
     // ========== 이번 달 정보 ==========
-    cal.set(Calendar.DAY_OF_MONTH, 1); 
+    cal.set(Calendar.DAY_OF_MONTH, 1);
     int firstDayOfWeek = cal.get(Calendar.DAY_OF_WEEK); // 1=일, 2=월, ...
     int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH); // 이번 달 마지막 날
     
