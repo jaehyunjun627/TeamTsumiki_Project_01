@@ -2,7 +2,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="data.KanjiRepository_KANJIDAO" %>
 <%@ page import="model.KanjiDTO" %>
-<%@ page import="model.AccountDTO" %>
+<%@ page import="model.model.dto.AccountDTO" %>
 <%
 // ========== 로그인 체크 ==========
     AccountDTO user = (AccountDTO) session.getAttribute("loginUser");

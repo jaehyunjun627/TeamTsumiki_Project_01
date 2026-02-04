@@ -1,6 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="model.AccountDTO, model.KanjiDTO, java.util.List" %>
+<%@ page import="model.model.dto.AccountDTO,model.KanjiDTO,java.util.List" %>
 <%@ page import="data.KanjiRepository_KANJIDAO,java.util.List" %>
 <%
 AccountDTO user = (AccountDTO) session.getAttribute("loginUser");
@@ -68,7 +68,7 @@ AccountDTO user = (AccountDTO) session.getAttribute("loginUser");
 </body>
 =======
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="model.AccountDTO,model.KanjiDTO,java.util.List" %>
+<%@ page import="model.model.dto.AccountDTO,model.KanjiDTO,java.util.List" %>
 <%@ page import="data.KanjiRepository_KANJIDAO,java.util.List" %>
 <%
 AccountDTO user = (AccountDTO) session.getAttribute("loginUser");

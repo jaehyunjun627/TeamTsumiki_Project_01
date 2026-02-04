@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.AccountDAO;
-import model.AccountDTO;
+
+import model.dao.AccountDAO;
+import model.dto.AccountDTO;
 
 /**
  * LoginCon.java - 로그인 처리 서블릿
