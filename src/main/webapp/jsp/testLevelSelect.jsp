@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-    String contextPath = request.getContextPath();
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>복습 테스트 - 레벨 선택</title>
-    <link rel="stylesheet" href="<%= contextPath %>/css/index.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
 </head>
 <body>
     <div class="main-layout">
@@ -28,25 +26,25 @@
                 </div>
                 
                 <div class="level-buttons">
-                    <button class="level-btn" onclick="location.href='<%= contextPath %>/testGroupSelect?level=N5'">
+                    <button class="level-btn" onclick="location.href='${pageContext.request.contextPath}/testGroupSelect?level=N5'">
                         N5
                     </button>
-                    <button class="level-btn" onclick="location.href='<%= contextPath %>/testGroupSelect?level=N4'">
+                    <button class="level-btn" onclick="location.href='${pageContext.request.contextPath}/testGroupSelect?level=N4'">
                         N4
                     </button>
-                    <button class="level-btn" onclick="location.href='<%= contextPath %>/testGroupSelect?level=N3'">
+                    <button class="level-btn" onclick="location.href='${pageContext.request.contextPath}/testGroupSelect?level=N3'">
                         N3
                     </button>
-                    <button class="level-btn" onclick="location.href='<%= contextPath %>/testGroupSelect?level=N2'">
+                    <button class="level-btn" onclick="location.href='${pageContext.request.contextPath}/testGroupSelect?level=N2'">
                         N2
                     </button>
-                    <button class="level-btn" onclick="location.href='<%= contextPath %>/testGroupSelect?level=N1'">
+                    <button class="level-btn" onclick="location.href='${pageContext.request.contextPath}/testGroupSelect?level=N1'">
                         N1
                     </button>
                 </div>
                 
                 <div style="margin-top: 30px; text-align: center;">
-                    <button class="tool-btn" onclick="location.href='<%= contextPath %>/index.jsp'" 
+                    <button class="tool-btn" onclick="location.href='${pageContext.request.contextPath}/index.jsp'" 
                             style="max-width: 300px; background: linear-gradient(135deg, #9e9e9e 0%, #bdbdbd 100%);">
                         메인으로 돌아가기
                     </button>

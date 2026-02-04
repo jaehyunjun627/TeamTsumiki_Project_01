@@ -1,62 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="model.KanjiDTO" %>
-<%@ page import="java.util.List" %>
-<%
-    KanjiDTO currentKanji = (KanjiDTO) request.getAttribute("currentKanji");
-    @SuppressWarnings("unchecked")
-    List<String> choices = (List<String>) request.getAttribute("choices");
-    String correctAnswer = (String) request.getAttribute("correctAnswer");
-    Integer currentIndex = (Integer) request.getAttribute("currentIndex");
-    Integer totalCount = (Integer) request.getAttribute("totalCount");
-    String level = (String) request.getAttribute("level");
-    Integer group = (Integer) request.getAttribute("group");
-    String contextPath = request.getContextPath();
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>복습 테스트</title>
-    <link rel="stylesheet" href="<%= contextPath %>/css/test.css?v=2">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/test.css?v=4">
 </head>
 <body>
     <div class="test-container">
         <div class="test-header">
-            <a href="<%= contextPath %>/testGroupSelect?level=<%= level %>" class="back-link">← 그룹 선택</a>
+            <a href="${pageContext.request.contextPath}/testGroupSelect?level=${level}" class="back-link">← 그룹 선택</a>
             <div class="test-progress">
-                문제 <%= currentIndex + 1 %> / <%= totalCount %>
+                문제 ${currentIndex + 1} / ${totalCount}
             </div>
         </div>
         
         <div class="test-card">
             <div class="kanji-display">
-                <%= currentKanji.getKanji() %>
+                ${currentKanji.kanji}
             </div>
             
             <div class="choices-grid">
-                <% for (int i = 0; i < choices.size(); i++) { %>
-                    <button class="choice-btn" onclick="checkAnswer('<%= choices.get(i) %>')">
-                        <%= choices.get(i) %>
+                <c:forEach var="choice" items="${choices}">
+                    <button class="choice-btn" onclick="checkAnswer('${choice}')">
+                        ${choice}
                     </button>
-                <% } %>
+                </c:forEach>
             </div>
         </div>
         
         <div class="answer-section">
-            <button class="show-answer-btn" onclick="showAnswer()">
-                정답 확인
+            <button class="skip-answer-btn" onclick="skipAnswer()">
+                모르겠어요
             </button>
         </div>
     </div>
     
     <script>
         let answered = false;
-        const currentIndex = <%= currentIndex %>;
-        const totalCount = <%= totalCount %>;
-        const level = '<%= level %>';
-        const group = <%= group %>;
-        const contextPath = '<%= contextPath %>';
-        const correctAnswer = '<%= correctAnswer %>';
+        const currentIndex = ${currentIndex};
+        const totalCount = ${totalCount};
+        const level = '${level}';
+        const group = ${group};
+        const contextPath = '${pageContext.request.contextPath}';
+        const correctAnswer = '${correctAnswer}';
         
         function checkAnswer(selected) {
             if (answered) return;
@@ -76,7 +64,6 @@
                 btn.disabled = true;
             });
             
-            // 서버에 답안 제출
             fetch(contextPath + '/submitAnswer', {
                 method: 'POST',
                 headers: {
@@ -86,28 +73,54 @@
                       '&correct=' + encodeURIComponent(correctAnswer) +
                       '&level=' + level +
                       '&group=' + group +
-                      '&index=' + currentIndex
+                      '&index=' + currentIndex +
+                      '&skipped=false'
             });
             
             setTimeout(() => {
-                if (currentIndex < totalCount - 1) {
-                    // 다음 문제로
-                    const nextIndex = currentIndex + 1;
-                    location.href = contextPath + '/testQuestion?level=' + level + '&group=' + group + '&index=' + nextIndex;
-                } else {
-                    // 테스트 완료 - 결과 화면으로
-                    location.href = contextPath + '/testResult';
-                }
+                goToNextQuestion();
             }, 1500);
         }
         
-        function showAnswer() {
+        function skipAnswer() {
+            if (answered) return;
+            answered = true;
+            
             const buttons = document.querySelectorAll('.choice-btn');
             buttons.forEach(btn => {
-                if (btn.textContent.trim() === correctAnswer) {
+                const btnText = btn.textContent.trim();
+                if (btnText === correctAnswer) {
                     btn.classList.add('correct');
                 }
+                btn.disabled = true;
             });
+            
+            document.querySelector('.skip-answer-btn').disabled = true;
+            
+            fetch(contextPath + '/submitAnswer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'correct=' + encodeURIComponent(correctAnswer) +
+                      '&level=' + level +
+                      '&group=' + group +
+                      '&index=' + currentIndex +
+                      '&skipped=true'
+            });
+            
+            setTimeout(() => {
+                goToNextQuestion();
+            }, 1500);
+        }
+        
+        function goToNextQuestion() {
+            if (currentIndex < totalCount - 1) {
+                const nextIndex = currentIndex + 1;
+                location.href = contextPath + '/testQuestion?level=' + level + '&group=' + group + '&index=' + nextIndex;
+            } else {
+                location.href = contextPath + '/testResult';
+            }
         }
     </script>
 </body>

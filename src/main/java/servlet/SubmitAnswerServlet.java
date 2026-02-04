@@ -29,27 +29,28 @@ public class SubmitAnswerServlet extends HttpServlet {
      
      String selectedAnswer = request.getParameter("selected");
      String correctAnswer = request.getParameter("correct");
-     String level = request.getParameter("level");
-     String groupStr = request.getParameter("group");
+     String skippedParam = request.getParameter("skipped");  // 건너뛰기 여부
      String indexStr = request.getParameter("index");
      
-     if (selectedAnswer == null || correctAnswer == null) {
+     if (correctAnswer == null) {
          response.sendRedirect("test");
          return;
      }
      
      int currentIndex = Integer.parseInt(indexStr);
+     boolean isSkipped = "true".equals(skippedParam);
      
      // 정답 여부 확인
-     boolean isCorrect = selectedAnswer.equals(correctAnswer);
+     boolean isCorrect = !isSkipped && selectedAnswer != null && selectedAnswer.equals(correctAnswer);
      
      // 현재 한자 정보 가져오기
      @SuppressWarnings("unchecked")
      List<KanjiDTO> testKanji = (List<KanjiDTO>) session.getAttribute("testKanji");
      KanjiDTO currentKanji = testKanji.get(currentIndex);
      
-     // 답안 기록 생성
-     TestAnswerRecord record = new TestAnswerRecord(currentKanji, correctAnswer, selectedAnswer, isCorrect);
+     // 답안 기록 생성 (건너뛰기면 userAnswer는 null)
+     String userAnswer = isSkipped ? null : selectedAnswer;
+     TestAnswerRecord record = new TestAnswerRecord(currentKanji, correctAnswer, userAnswer, isCorrect, isSkipped);
      
      // 답안 기록 저장
      @SuppressWarnings("unchecked")

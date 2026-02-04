@@ -6,12 +6,14 @@ public class TestAnswerRecord {
     private String correctAnswer;
     private String userAnswer;
     private boolean isCorrect;
+    private boolean isSkipped;  // 모르겠어요 클릭 여부
     
-    public TestAnswerRecord(KanjiDTO kanji, String correctAnswer, String userAnswer, boolean isCorrect) {
+    public TestAnswerRecord(KanjiDTO kanji, String correctAnswer, String userAnswer, boolean isCorrect, boolean isSkipped) {
         this.kanji = kanji;
         this.correctAnswer = correctAnswer;
         this.userAnswer = userAnswer;
         this.isCorrect = isCorrect;
+        this.isSkipped = isSkipped;
     }
     
     public KanjiDTO getKanji() {
@@ -28,5 +30,9 @@ public class TestAnswerRecord {
     
     public boolean isCorrect() {
         return isCorrect;
+    }
+    
+    public boolean isSkipped() {
+        return isSkipped;
     }
 }

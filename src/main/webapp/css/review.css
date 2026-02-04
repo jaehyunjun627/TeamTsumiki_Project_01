@@ -214,3 +214,19 @@ body {
 .nav-btn:disabled:hover {
     transform: none;
 }
+
+.skip-box {
+    background: #fef3c7;
+    border: 2px solid #f59e0b;
+}
+
+.skip-box .answer-value {
+    color: #f59e0b;
+    font-size: 32px;
+}
+
+.skip-text {
+    font-size: 12px;
+    color: #92400e;
+    margin-top: 5px;
+}

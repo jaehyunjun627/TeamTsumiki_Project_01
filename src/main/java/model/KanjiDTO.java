@@ -16,13 +16,12 @@ public class KanjiDTO {
     private String explantion;
     private String example_word;
     
-    public KanjiDTO(String kanji, int level, String korean, String unyomi_1, String unyomi_2, String unyomi_3, String unyomi_4,
-            String kunyomi_1, String kunyomi_2, String kunyomi_3, String kunyomi_4, String explantion,
+    public KanjiDTO(String kanji, int level, String unyomi_1, String unyomi_2, String unyomi_3, String unyomi_4,
+            String kunyomi_1, String kunyomi_2, String kunyomi_3, String kunyomi_4, String korean, String explantion,
             String example_word) {
         super();
         this.kanji = kanji;
         this.level = level;
-        this.korean = korean;
         this.unyomi_1 = unyomi_1;
         this.unyomi_2 = unyomi_2;
         this.unyomi_3 = unyomi_3;
@@ -31,6 +30,7 @@ public class KanjiDTO {
         this.kunyomi_2 = kunyomi_2;
         this.kunyomi_3 = kunyomi_3;
         this.kunyomi_4 = kunyomi_4;
+        this.korean = korean;
         this.explantion = explantion;
         this.example_word = example_word;
     }
