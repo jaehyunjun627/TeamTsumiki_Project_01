@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>로그인</title>
+     <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/project.css"/>
     <style>
         .error { color: red; }
         .success { color: green; }

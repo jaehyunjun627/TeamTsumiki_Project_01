@@ -17,50 +17,49 @@ import util.StudyManager;
 
 @WebServlet("/groupSelect")
 public class GroupSelectCon extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        reqPro(request, response);
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		reqPro(request, response);
+	}
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        reqPro(request, response);
-    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		reqPro(request, response);
+	}
 
-    protected void reqPro(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	protected void reqPro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-        request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 
-        String level = request.getParameter("level");
+		String level = request.getParameter("level");
 
-        // 파라미터 검증
-        if (level == null || level.isEmpty()) {
-            response.sendRedirect("main.jsp");
-            return;
-        }
+		// 파라미터 검증
+		if (level == null || level.isEmpty()) {
+			response.sendRedirect("main.jsp");
+			return;
+		}
 
-        HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 
-        // 해당 레벨의 전체 한자 가져오기
-        List<KanjiDTO> allKanji = KanjiRepository.findByLevel(level);
-        int totalGroups = StudyManager.getTotalGroups(allKanji);
+		// 해당 레벨의 전체 한자 가져오기
+		int totalGroups = StudyManager.getTotalGroup(level);
 
-        // 학습 진행 상태 가져오기 (없으면 생성)
-        StudyProgressDTO progress = (StudyProgressDTO) session.getAttribute("studyProgress_" + level);
-        if (progress == null) {
-            progress = new StudyProgressDTO(level);
-            session.setAttribute("studyProgress_" + level, progress);
-        }
+		// 학습 진행 상태 가져오기 (없으면 생성)
+		StudyProgressDTO progress = (StudyProgressDTO) session.getAttribute("studyProgress_" + level);
+		if (progress == null) {
+			progress = new StudyProgressDTO(level);
+			session.setAttribute("studyProgress_" + level, progress);
+		}
 
-        // JSP에 데이터 전달
-        request.setAttribute("level", level);
-        request.setAttribute("totalGroups", totalGroups);
-        request.setAttribute("progress", progress);
+		// JSP에 데이터 전달
+		request.setAttribute("level", level);
+		request.setAttribute("totalGroups", totalGroups);
+		request.setAttribute("progress", progress);
 
-        // JSP로 포워드
-        request.getRequestDispatcher("/WEB-INF/views/groupSelect.jsp").forward(request, response);
-    }
+		// JSP로 포워드
+		request.getRequestDispatcher("/WEB-INF/views/groupSelect.jsp").forward(request, response);
+	}
 }

@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="UTF-8">
     <title>${level} - 그룹 선택</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/group.css">
