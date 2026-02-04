@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.StudyProgressDTO;
+import model.StudyProgressDTO_LOGDAO;
 
 @WebServlet("/resetProgress")
 public class ResetProgressCon extends HttpServlet {
@@ -41,7 +41,7 @@ public class ResetProgressCon extends HttpServlet {
         HttpSession session = request.getSession();
 
         // 해당 레벨의 학습 진행 상태 초기화
-        StudyProgressDTO progress = (StudyProgressDTO) session.getAttribute("studyProgress_" + level);
+        StudyProgressDTO_LOGDAO progress = (StudyProgressDTO_LOGDAO) session.getAttribute("studyProgress_" + level);
         if (progress != null) {
             progress.resetProgress();
             session.setAttribute("studyProgress_" + level, progress);

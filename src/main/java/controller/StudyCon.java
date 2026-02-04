@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import data.KanjiRepository;
+import data.KanjiRepository_KANJIDAO;
 import model.KanjiDTO;
 import util.StudyManager;
 
@@ -62,7 +62,7 @@ public class StudyCon extends HttpServlet {
 
         // 세션에 없으면 새로 가져오기
         if (groupKanji == null || groupKanji.isEmpty()) {
-            List<KanjiDTO> allKanji = KanjiRepository.findByLevel(level);
+            List<KanjiDTO> allKanji = KanjiRepository_KANJIDAO.findByLevel(level);
             groupKanji = StudyManager.getKanjiByGroup(allKanji, groupNumber);
 
             if (groupKanji.isEmpty()) {

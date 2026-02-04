@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<%@ page import="data.KanjiRepository" %>
+<%@ page import="data.KanjiRepository_KANJIDAO" %>
 <%@ page import="model.KanjiDTO" %>
 <%@ page import="model.AccountDTO" %>
 <%
-    // ========== 로그인 체크 ==========
+// ========== 로그인 체크 ==========
     AccountDTO user = (AccountDTO) session.getAttribute("loginUser");
     if (user == null) {
         response.sendRedirect("login.jsp");
@@ -25,7 +25,7 @@
     }
     
     // ========== 해당 섹터의 한자 가져오기 ==========
-    List<KanjiDTO> kanjiList = KanjiRepository.findBySector(level, sector);
+    List<KanjiDTO> kanjiList = KanjiRepository_KANJIDAO.findBySector(level, sector);
     
     if (kanjiList == null || kanjiList.isEmpty()) {
         out.println("<script>alert('테스트 데이터가 없습니다.'); history.back();</script>");

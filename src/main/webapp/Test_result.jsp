@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="model.AccountDTO" %>
-<%@ page import="model.AttendanceDAO" %>
+<%@ page import="model.AttendanceDAO_LOGDAO" %>
 <%
-    // ========== 로그인 체크 ==========
+// ========== 로그인 체크 ==========
     AccountDTO user = (AccountDTO) session.getAttribute("loginUser");
     if (user == null) {
         response.sendRedirect("login.jsp");
@@ -28,7 +28,7 @@
     }
     
     // ========== 출석 체크 (테스트 완료 시 출석 기록) ==========
-    AttendanceDAO attendanceDAO = new AttendanceDAO();
+    AttendanceDAO_LOGDAO attendanceDAO = new AttendanceDAO_LOGDAO();
     boolean attendanceResult = attendanceDAO.checkAttendance(user.getUserID());
     
     // ========== 결과 메시지 및 아이콘 설정 ==========

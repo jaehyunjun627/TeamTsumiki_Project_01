@@ -18,7 +18,7 @@ import java.util.List;
  * ★ 출석 조건: 로그인만으로는 출석 X, 섹터 학습 완료해야 출석 O
  * ★ 학습 완료 시 checkAttendance(userID) 호출하면 됨
  */
-public class AttendanceDAO {
+public class AttendanceDAO_LOGDAO {
 
     // ========== Oracle 접속 정보 ==========
     String url = "jdbc:oracle:thin:@localhost:1521:xe";

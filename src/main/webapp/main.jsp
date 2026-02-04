@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="model.AccountDTO" %>
-<%@ page import="model.AttendanceDAO" %>
+<%@ page import="model.AttendanceDAO_LOGDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%
-    // ========== 로그인 체크 ==========
+// ========== 로그인 체크 ==========
     AccountDTO user = (AccountDTO) session.getAttribute("loginUser");
     if (user == null) {
         response.sendRedirect("login.jsp");
@@ -41,7 +41,7 @@
     }
     
     // ========== 출석 날짜 가져오기 ==========
-    AttendanceDAO attendanceDAO = new AttendanceDAO();
+    AttendanceDAO_LOGDAO attendanceDAO = new AttendanceDAO_LOGDAO();
     List<Integer> attendedDays = attendanceDAO.getMonthAttendance(user.getUserID(), todayYear, todayMonth);
 %>
 <!DOCTYPE html>

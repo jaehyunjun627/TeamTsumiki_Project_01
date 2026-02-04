@@ -52,12 +52,16 @@ public class LoginCon extends HttpServlet {
             return;
         }
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         
 =======
                  
 >>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
+>>>>>>> 1e07afbaabdebb554e31a06c9e21f2e92b0d0331
         // ★ 관리자 계정 체크 (DB 연결 없이)
 =======
 

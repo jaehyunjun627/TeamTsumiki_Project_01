@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import data.KanjiRepository;
+import data.KanjiRepository_KANJIDAO;
 import model.KanjiDTO;
 
 @WebServlet("/review.do")
@@ -27,7 +27,7 @@ public class ReviewCon extends HttpServlet {
         int page = (pageParam == null) ? 1 : Integer.parseInt(pageParam);
 
         // 2️⃣ 레벨 전체 한자 가져오기
-        List<KanjiDTO> allList = KanjiRepository.findByLevel(level);
+        List<KanjiDTO> allList = KanjiRepository_KANJIDAO.findByLevel(level);
 
         // 3️⃣ 페이지당 4개
         int pageSize = 4;

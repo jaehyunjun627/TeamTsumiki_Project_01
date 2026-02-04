@@ -1,6 +1,6 @@
 package data;
 
-public class KanjiCodeUtil {
+public class KanjiCodeUtil_KANJIDAO {
 
 	public static String code(String level, int sector, int index) {
 

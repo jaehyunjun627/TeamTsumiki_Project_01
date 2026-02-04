@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="model.AccountDTO, model.KanjiDTO, java.util.List" %>
-<%@ page import="data.KanjiRepository" %>
+<%@ page import="data.KanjiRepository_KANJIDAO" %>
 <%
-    // ========== 로그인 체크 ==========
+// ========== 로그인 체크 ==========
     AccountDTO user = (AccountDTO) session.getAttribute("loginUser");
     if (user == null) {
         response.sendRedirect("login.jsp");
@@ -14,7 +14,7 @@
     int sector = Integer.parseInt(request.getParameter("sector"));
     
     // ========== 메모리에서 한자 가져오기 ==========
-    List<KanjiDTO> allKanji = KanjiRepository.findByLevel(level);
+    List<KanjiDTO> allKanji = KanjiRepository_KANJIDAO.findByLevel(level);
     
     // ========== 섹터에 해당하는 한자만 추출 (20개씩) ==========
     int kanjiPerSector = 20;

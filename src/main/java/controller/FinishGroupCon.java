@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.StudyProgressDTO;
+import model.StudyProgressDTO_LOGDAO;
 
 @WebServlet("/finishGroup")
 public class FinishGroupCon extends HttpServlet {
@@ -50,7 +50,7 @@ public class FinishGroupCon extends HttpServlet {
         HttpSession session = request.getSession();
 
         // 학습 진행 상태 업데이트
-        StudyProgressDTO progress = (StudyProgressDTO) session.getAttribute("studyProgress_" + level);
+        StudyProgressDTO_LOGDAO progress = (StudyProgressDTO_LOGDAO) session.getAttribute("studyProgress_" + level);
         if (progress != null) {
             progress.addCompletedGroup(groupNumber);
             session.setAttribute("studyProgress_" + level, progress);
