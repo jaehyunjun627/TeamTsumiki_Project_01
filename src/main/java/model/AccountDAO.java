@@ -42,13 +42,7 @@ public class AccountDAO {
     public void insertMember(AccountDTO mDTO) {
         try {
             getCon();
-<<<<<<< HEAD
             String sql = "INSERT INTO account (userID, userPW1, userPW2, email, phone, nickname) VALUES (?, ?, ?, ?, ?, ?)";
-=======
-            // -----------------------------
-            String sql = "INSERT INTO account VALUES (?, ?, ?, ?, ?, ?, ?)";
-            // string -> sql문법으로 바꿔야함
->>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, mDTO.getUserID());
             pstmt.setString(2, mDTO.getUserPW1());
@@ -69,10 +63,6 @@ public class AccountDAO {
         int result = -1;
         try {
             getCon();
-<<<<<<< HEAD
-=======
-            // -----------------------------
->>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
             String sql = "SELECT userPW1 FROM account WHERE userID = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, userID);
@@ -102,10 +92,6 @@ public class AccountDAO {
         AccountDTO dto = null;
         try {
             getCon();
-<<<<<<< HEAD
-=======
-            // -----------------------------
->>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
             String sql = "SELECT * FROM account WHERE userID = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, userID);
@@ -134,10 +120,6 @@ public class AccountDAO {
         boolean result = false;
         try {
             getCon();
-<<<<<<< HEAD
-=======
-            // -----------------------------
->>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
             String sql = "SELECT userID FROM account WHERE userID = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, userID);
@@ -159,10 +141,6 @@ public class AccountDAO {
         boolean result = false;
         try {
             getCon();
-<<<<<<< HEAD
-=======
-            // -----------------------------
->>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
             String sql = "SELECT nickname FROM account WHERE nickname = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, nickname);

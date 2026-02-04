@@ -11,34 +11,10 @@
     </style>
 </head>
 <body>
-<<<<<<< HEAD
 
-<div class="signup-container" method="post">
+<div class="signup-container">
     <h3>회원가입</h3>
     <h1>재미있게 즐기는 일본어 공부, 지금 바로 시작해 보세요 !</h1>
-
-    <%
-        String error = request.getParameter("error");
-        if ("empty".equals(error)) {
-    %>
-        <p class="error">모든 항목을 입력해주세요.</p>
-    <%
-        } else if ("id".equals(error)) {
-    %>
-        <p class="error">이미 존재하는 아이디입니다.</p>
-    <%
-        } else if ("nickname".equals(error)) {
-    %>
-        <p class="error">이미 사용 중인 닉네임입니다.</p>
-    <%
-        } else if ("pw".equals(error)) {
-    %>
-        <p class="error">비밀번호가 일치하지 않습니다.</p>
-    <%
-        }
-    %>
-=======
-    <h2>회원가입</h2>
 
     <c:choose>
         <c:when test="${param.error == 'empty'}">
@@ -54,9 +30,8 @@
             <p class="error">비밀번호가 일치하지 않습니다.</p>
         </c:when>
     </c:choose>
->>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
 
-    <form action="RegisterCon.do" method="post">
+    <form action="${pageContext.request.contextPath}/RegisterCon.do" method="post">
         <div class="singup-form-group">
             <input type="text" name="nickname" placeholder="닉네임" required>
         </div>
@@ -77,7 +52,7 @@
     </form>
 
     <div class="login-link">
-        이미 계정이 있으신가요? <a href="loginn.jsp">로그인</a>
+        이미 계정이 있으신가요? <a href="login.jsp">로그인</a>
     </div>
 </div>
 
