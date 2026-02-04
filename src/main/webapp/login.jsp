@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>로그인</title>
     <style>
-        .error { color: red; }
-        .success { color: green; }
+       <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/login_register.css"/>
     </style>
 </head>
 <body>
