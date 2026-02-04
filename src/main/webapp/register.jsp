@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,28 +11,22 @@
 </head>
 <body>
     <h2>회원가입</h2>
-    
-    <%
-        String error = request.getParameter("error");
-        if ("empty".equals(error)) {
-    %>
-        <p class="error">모든 항목을 입력해주세요.</p>
-    <%
-        } else if ("id".equals(error)) {
-    %>
-        <p class="error">이미 존재하는 아이디입니다.</p>
-    <%
-        } else if ("nickname".equals(error)) {
-    %>
-        <p class="error">이미 사용 중인 닉네임입니다.</p>
-    <%
-        } else if ("pw".equals(error)) {
-    %>
-        <p class="error">비밀번호가 일치하지 않습니다.</p>
-    <%
-        }
-    %>
-    
+
+    <c:choose>
+        <c:when test="${param.error == 'empty'}">
+            <p class="error">모든 항목을 입력해주세요.</p>
+        </c:when>
+        <c:when test="${param.error == 'id'}">
+            <p class="error">이미 존재하는 아이디입니다.</p>
+        </c:when>
+        <c:when test="${param.error == 'nickname'}">
+            <p class="error">이미 사용 중인 닉네임입니다.</p>
+        </c:when>
+        <c:when test="${param.error == 'pw'}">
+            <p class="error">비밀번호가 일치하지 않습니다.</p>
+        </c:when>
+    </c:choose>
+
     <form action="RegisterCon.do" method="post">
         <p>닉네임: <input type="text" name="nickname" required></p>
         <p>이메일(아이디): <input type="email" name="email" required></p>

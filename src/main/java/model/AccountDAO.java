@@ -30,7 +30,7 @@ public class AccountDAO {
             // 연동이 되었는가?
             getCon();
             // -----------------------------
-            String sql = "INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO account VALUES (?, ?, ?, ?, ?, ?, ?)";
             // string -> sql문법으로 바꿔야함
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, mDTO.getUserID());// memberDTO
@@ -54,7 +54,7 @@ public class AccountDAO {
             // 연동이 되었는가?
             getCon();
             // -----------------------------
-            String sql = "SELECT userPW1 FROM member WHERE userID = ?";
+            String sql = "SELECT userPW1 FROM account WHERE userID = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, userID);
             rs = pstmt.executeQuery();// 오라클에서 데이터 가져오는 녀석
@@ -84,7 +84,7 @@ public class AccountDAO {
             // 연동이 되었는가?
             getCon();
             // -----------------------------
-            String sql = "SELECT * FROM member WHERE userID = ?";
+            String sql = "SELECT * FROM account WHERE userID = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, userID);
             rs = pstmt.executeQuery();
@@ -113,7 +113,7 @@ public class AccountDAO {
             // 연동이 되었는가?
             getCon();
             // -----------------------------
-            String sql = "SELECT userID FROM member WHERE userID = ?";
+            String sql = "SELECT userID FROM account WHERE userID = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, userID);
             rs = pstmt.executeQuery();
@@ -135,7 +135,7 @@ public class AccountDAO {
             // 연동이 되었는가?
             getCon();
             // -----------------------------
-            String sql = "SELECT nickname FROM member WHERE nickname = ?";
+            String sql = "SELECT nickname FROM account WHERE nickname = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, nickname);
             rs = pstmt.executeQuery();
