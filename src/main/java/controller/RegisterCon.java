@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.AccountDAO;
 import model.AccountDTO;
 
+<<<<<<< HEAD
 /**
  * RegisterCon.java - 회원가입 처리 서블릿
  * 
@@ -23,6 +24,9 @@ import model.AccountDTO;
  * 5. DB에 회원 정보 저장 → 성공 시 login.jsp?msg=success
  */
 @WebServlet("/RegisterCon.do")
+=======
+@WebServlet("/register.do")
+>>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
 public class RegisterCon extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

@@ -19,7 +19,7 @@
     int todayDay = cal.get(Calendar.DAY_OF_MONTH);
     
     // ========== 이번 달 정보 ==========
-    cal.set(Calendar.DAY_OF_MONTH, 1);
+    cal.set(Calendar.DAY_OF_MONTH, 1); 
     int firstDayOfWeek = cal.get(Calendar.DAY_OF_WEEK); // 1=일, 2=월, ...
     int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH); // 이번 달 마지막 날
     

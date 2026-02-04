@@ -53,11 +53,16 @@ public class LoginCon extends HttpServlet {
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 =======
                  
 >>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
         // ★ 관리자 계정 체크 (DB 연결 없이)
+=======
+
+
+>>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
         // ID: admin@admin.com
         // password: 123
 =======
@@ -73,7 +78,7 @@ public class LoginCon extends HttpServlet {
 
             HttpSession session = request.getSession();
             session.setAttribute("loginUser", dto);
-            response.sendRedirect("main.jsp");
+            response.sendRedirect("main");
             return;
         }
 
@@ -90,7 +95,7 @@ public class LoginCon extends HttpServlet {
             AccountDTO dto = dao.getMember(userID);
             HttpSession session = request.getSession();
             session.setAttribute("loginUser", dto);
-            response.sendRedirect("main.jsp");
+            response.sendRedirect(request.getContextPath() + "/main.do");
         } else if (result == 0) {
             // 비밀번호 틀림
             response.sendRedirect("login.jsp?error=pw");
