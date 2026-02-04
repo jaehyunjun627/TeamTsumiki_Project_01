@@ -4,12 +4,12 @@ package model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class StudyProgressDTO {
+public class StudyProgressDTO_LOGDAO {
     private String level; // "N5", "N4", "N3", "N2", "N1"
     private Set<Integer> completedGroups;      // 완료한 그룹 번호
     private Set<String> learnedKanji;          // 학습한 한자들
     
-    public StudyProgressDTO(String level) {
+    public StudyProgressDTO_LOGDAO(String level) {
         this.level = level;
         this.completedGroups = new HashSet<>();
         this.learnedKanji = new HashSet<>();

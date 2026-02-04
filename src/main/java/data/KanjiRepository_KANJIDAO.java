@@ -5,7 +5,7 @@ import model.KanjiDTO;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class KanjiRepository {
+public class KanjiRepository_KANJIDAO {
 
     private static final Map<String, KanjiDTO> KANJI_MAP = new HashMap<>();
 
@@ -118,7 +118,7 @@ public class KanjiRepository {
     }
 
     private static void put(String level, int sector, int index, KanjiDTO dto) {
-        String code = KanjiCodeUtil.code(level, sector, index);
+        String code = KanjiCodeUtil_KANJIDAO.code(level, sector, index);
         dto.setKanjiCode(code); // DTO에 kanjiCode 필드+setter가 있어야 함
         KANJI_MAP.put(code, dto);
     }
@@ -128,7 +128,7 @@ public class KanjiRepository {
     }
 
     public static List<KanjiDTO> findByLevel(String level) {
-        String prefix = KanjiCodeUtil.levelPrefix(level);
+        String prefix = KanjiCodeUtil_KANJIDAO.levelPrefix(level);
         return KANJI_MAP.entrySet().stream()
                 .filter(e -> e.getKey().startsWith(prefix))
                 .sorted(Map.Entry.comparingByKey())
@@ -137,7 +137,7 @@ public class KanjiRepository {
     }
 
     public static List<KanjiDTO> findBySector(String level, int sector) {
-        String prefix = KanjiCodeUtil.sectorPrefix(level, sector);
+        String prefix = KanjiCodeUtil_KANJIDAO.sectorPrefix(level, sector);
         return KANJI_MAP.entrySet().stream()
                 .filter(e -> e.getKey().startsWith(prefix))
                 .sorted(Map.Entry.comparingByKey())

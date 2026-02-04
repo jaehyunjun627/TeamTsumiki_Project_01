@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
+  <servlet>
+    <description></description>
+    <display-name>MapServlet</display-name>
+    <servlet-name>MapServlet</servlet-name>
+    <servlet-class>MapServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MapServlet</servlet-name>
+    <url-pattern>/MapServlet</url-pattern>
+  </servlet-mapping>
+  <display-name>Team_Tsumiki_Project_01</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>LoginCon</servlet-name>
+    <servlet-class>controller.LoginCon</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterCon</servlet-name>
+    <servlet-class>controller.RegisterCon</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LogoutCon</servlet-name>
+    <servlet-class>controller.LogoutCon</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginCon</servlet-name>
+    <url-pattern>/LoginCon.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterCon</servlet-name>
+    <url-pattern>/RegisterCon.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutCon</servlet-name>
+    <url-pattern>/LogoutCon.do</url-pattern>
+  </servlet-mapping>
+</web-app>

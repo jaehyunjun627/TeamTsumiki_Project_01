@@ -9,7 +9,24 @@ import javax.servlet.http.HttpServletResponse;
 import model.AccountDAO;
 import model.AccountDTO;
 
+<<<<<<< HEAD
+/**
+ * RegisterCon.java - 회원가입 처리 서블릿
+ * 
+ * [요청 URL] RegisterCon.do (POST)
+ * [파라미터] nickname, email, userPw, userPw2
+ * 
+ * [처리 흐름]
+ * 1. 빈 입력 체크 → 실패 시 register.jsp?error=empty
+ * 2. 아이디 중복 체크 → 실패 시 register.jsp?error=id
+ * 3. 닉네임 중복 체크 → 실패 시 register.jsp?error=nickname
+ * 4. 비밀번호 일치 확인 → 실패 시 register.jsp?error=pw
+ * 5. DB에 회원 정보 저장 → 성공 시 login.jsp?msg=success
+ */
 @WebServlet("/RegisterCon.do")
+=======
+@WebServlet("/register.do")
+>>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
 public class RegisterCon extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -33,6 +50,7 @@ public class RegisterCon extends HttpServlet {
         String userPw = request.getParameter("userPw");
         String userPw2 = request.getParameter("userPw2");
 
+        // ========== 1. 빈 입력 체크 ==========
         if (nickname == null || nickname.isEmpty() ||
             email == null || email.isEmpty() ||
             userPw == null || userPw.isEmpty() ||
@@ -43,21 +61,25 @@ public class RegisterCon extends HttpServlet {
 
         AccountDAO dao = new AccountDAO();
 
+        // ========== 2. 아이디(이메일) 중복 체크 ==========
         if (dao.idCheck(email)) {
             response.sendRedirect("register.jsp?error=id");
             return;
         }
 
+        // ========== 3. 닉네임 중복 체크 ==========
         if (dao.nicknameCheck(nickname)) {
             response.sendRedirect("register.jsp?error=nickname");
             return;
         }
 
+        // ========== 4. 비밀번호 일치 확인 ==========
         if (!userPw.equals(userPw2)) {
             response.sendRedirect("register.jsp?error=pw");
             return;
         }
 
+        // ========== 5. 회원 정보 저장 ==========
         AccountDTO dto = new AccountDTO();
         dto.setUserID(email);
         dto.setUserPW1(userPw);
