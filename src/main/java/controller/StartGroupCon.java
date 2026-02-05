@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import data.KanjiRepository_KANJIDAO;
+import model.dao.KanjiDAO;
 import model.dto.KanjiDTO;
 import util.StudyManager;
 
@@ -51,7 +51,7 @@ public class StartGroupCon extends HttpServlet {
         }
 
         // 전체 한자 리스트 가져오기
-        List<KanjiDTO> allKanji = KanjiRepository_KANJIDAO.findByLevel(level);
+        List<KanjiDTO> allKanji = KanjiDAO.findByLevel(level);
 
         // 해당 그룹의 한자 가져오기
         List<KanjiDTO> groupKanji = StudyManager.getKanjiByGroup(allKanji, groupNumber);

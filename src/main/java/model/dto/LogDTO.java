@@ -1,7 +1,17 @@
-package model;
+package model.dto;
 
 import java.sql.Timestamp;
 
+/**
+ * LogDTO.java - 학습 로그 DTO
+ *
+ * 학습 기록 저장용 데이터 전송 객체
+ * - logID     : 로그 ID (PK)
+ * - accID     : 회원 ID
+ * - kanjiID   : 한자 ID
+ * - isCorrect : 정답 여부
+ * - studiedAt : 학습 시간
+ */
 public class LogDTO {
 
     private int logID;          // 로그 ID (PK)
@@ -30,9 +40,8 @@ public class LogDTO {
         this.isCorrect = isCorrect;
     }
 
-    // --------------------
-    // Getter / Setter
-    // --------------------
+    // ========== Getter / Setter ==========
+
     public int getLogID() {
         return logID;
     }
