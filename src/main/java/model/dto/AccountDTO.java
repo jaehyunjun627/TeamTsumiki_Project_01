@@ -23,6 +23,7 @@ public class AccountDTO {
     private String phone;       // 전화번호
     private String attendance;  // 출석 정보 (미사용)
     private String nickname;    // 닉네임
+    private String regDate;     // 가입일
 
     // ========== 생성자 ==========
     
@@ -77,4 +78,7 @@ public class AccountDTO {
 
     public String getNickname() { return nickname; }
     public void setNickname(String nickname) { this.nickname = nickname; }
+
+    public String getRegDate() { return regDate; }
+    public void setRegDate(String regDate) { this.regDate = regDate; }
 }

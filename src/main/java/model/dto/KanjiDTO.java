@@ -196,6 +196,9 @@ public class KanjiDTO {
     public String getExample_word_1() { return example1; }
     public String getExample_word_2() { return example2; }
     public String getExample_word_3() { return example3; }
+
+    // JSP 호환용 (getKorean -> getKoreanMeaning)
+    public String getKorean() { return koreanMeaning; }
 }
 
 
