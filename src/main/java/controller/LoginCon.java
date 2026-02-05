@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.AccountDAO;
+import model.dao.AccountDAO;
 import model.dto.AccountDTO;
 
 /**
