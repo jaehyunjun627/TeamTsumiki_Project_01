@@ -38,10 +38,15 @@ public class KanjiDTO {
     // 시간 정보 (선택)
     private Timestamp createdAt;
     private Timestamp updatedAt;
-    
-    
+
+    // 호환성 필드 (KanjiRepository_KANJIDAO용)
+    private String kanjiCode;
+    private String onyomi4;  // 4번째 음독
+    private String kunyomi4; // 4번째 훈독
+
+
     // ========== 생성자 ==========
-    
+
     public KanjiDTO() {}
     
     // 필수 필드만 (DB INSERT용)
@@ -80,6 +85,27 @@ public class KanjiDTO {
         this.jlptLevel = jlptLevel;
         this.sector = sector;
         this.indexNum = indexNum;
+    }
+
+    // KanjiRepository_KANJIDAO용 생성자 (호환성)
+    public KanjiDTO(String kanji, String onyomi1, String onyomi2, String onyomi3, String onyomi4,
+                    String kunyomi1, String kunyomi2, String kunyomi3, String kunyomi4,
+                    String koreanMeaning, String meaningDescription,
+                    String example1, String example2, String example3) {
+        this.kanji = kanji;
+        this.onyomi1 = onyomi1;
+        this.onyomi2 = onyomi2;
+        this.onyomi3 = onyomi3;
+        this.onyomi4 = onyomi4;
+        this.kunyomi1 = kunyomi1;
+        this.kunyomi2 = kunyomi2;
+        this.kunyomi3 = kunyomi3;
+        this.kunyomi4 = kunyomi4;
+        this.koreanMeaning = koreanMeaning;
+        this.meaningDescription = meaningDescription;
+        this.example1 = example1;
+        this.example2 = example2;
+        this.example3 = example3;
     }
     
     
@@ -143,6 +169,33 @@ public class KanjiDTO {
     
     public Timestamp getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(Timestamp updatedAt) { this.updatedAt = updatedAt; }
+
+    // ========== 호환성 Getter/Setter (기존 코드 호환용) ==========
+
+    // kanjiCode (KanjiRepository_KANJIDAO용)
+    public String getKanjiCode() { return kanjiCode; }
+    public void setKanjiCode(String kanjiCode) { this.kanjiCode = kanjiCode; }
+
+    // 4번째 음독/훈독
+    public String getOnyomi4() { return onyomi4; }
+    public void setOnyomi4(String onyomi4) { this.onyomi4 = onyomi4; }
+    public String getKunyomi4() { return kunyomi4; }
+    public void setKunyomi4(String kunyomi4) { this.kunyomi4 = kunyomi4; }
+
+    // StudyCon 호환용 별칭 메서드 (unyomi_1 형식)
+    public String getUnyomi_1() { return onyomi1; }
+    public String getUnyomi_2() { return onyomi2; }
+    public String getUnyomi_3() { return onyomi3; }
+    public String getUnyomi_4() { return onyomi4; }
+
+    public String getKunyomi_1() { return kunyomi1; }
+    public String getKunyomi_2() { return kunyomi2; }
+    public String getKunyomi_3() { return kunyomi3; }
+    public String getKunyomi_4() { return kunyomi4; }
+
+    public String getExample_word_1() { return example1; }
+    public String getExample_word_2() { return example2; }
+    public String getExample_word_3() { return example3; }
 }
 
 

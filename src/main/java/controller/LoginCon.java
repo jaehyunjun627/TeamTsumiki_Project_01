@@ -52,29 +52,9 @@ public class LoginCon extends HttpServlet {
             response.sendRedirect("login.jsp?error=empty");
             return;
         }
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-=======
-                 
->>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
->>>>>>> 1e07afbaabdebb554e31a06c9e21f2e92b0d0331
-        // ★ 관리자 계정 체크 (DB 연결 없이)
-=======
-
-
->>>>>>> branch 'main' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
-        // ID: admin@admin.com
-        // password: 123
-=======
 
         // ========== 2. 관리자 계정 체크 (DB 연결 없이) ==========
         // 관리자 아이디: admin@admin.com / 비밀번호: 123
->>>>>>> branch 'cheoluk' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
         if ("admin@admin.com".equals(userID) && "123".equals(userPW)) {
             AccountDTO dto = new AccountDTO();
             dto.setUserID("admin@admin.com");
@@ -87,11 +67,7 @@ public class LoginCon extends HttpServlet {
             return;
         }
 
-<<<<<<< HEAD
-        // 일반 회원 DB 체크 
-=======
         // ========== 3. 일반 회원 DB 체크 ==========
->>>>>>> branch 'cheoluk' of https://github.com/jaehyunjun627/TeamTsumiki_Project_01.git
         AccountDAO dao = new AccountDAO();
         int result = dao.loginCheck(userID, userPW);
 

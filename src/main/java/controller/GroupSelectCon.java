@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import data.KanjiDAO;
-import model.KanjiDTO;
+import data.KanjiRepository_KANJIDAO;
+import model.dto.KanjiDTO;
 import model.StudyProgressDTO_LOGDAO;
 import util.StudyManager;
 

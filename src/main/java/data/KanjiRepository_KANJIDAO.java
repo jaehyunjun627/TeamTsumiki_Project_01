@@ -1,6 +1,6 @@
 package data;
 
-import model.KanjiDTO;
+import model.dto.KanjiDTO;
 
 import java.util.*;
 import java.util.stream.Collectors;

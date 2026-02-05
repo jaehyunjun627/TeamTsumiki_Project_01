@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import data.KanjiRepository_KANJIDAO;
-import model.KanjiDTO;
+import model.dto.KanjiDTO;
 
 @WebServlet("/review.do")
 public class ReviewCon extends HttpServlet {

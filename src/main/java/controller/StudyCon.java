@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import data.KanjiRepository_KANJIDAO;
-import model.KanjiDTO;
+import model.dto.KanjiDTO;
 import util.StudyManager;
 
 @WebServlet("/study")

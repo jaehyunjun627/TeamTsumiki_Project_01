@@ -3,7 +3,7 @@ package util;
 
 import java.util.ArrayList;
 import java.util.List;
-import model.KanjiDTO;
+import model.dto.KanjiDTO;
 
 public class StudyManager {
     
