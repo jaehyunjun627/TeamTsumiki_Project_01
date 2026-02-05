@@ -62,7 +62,8 @@ public class StudyCon extends HttpServlet {
 
         // 세션에 없으면 새로 가져오기
         if (groupKanji == null || groupKanji.isEmpty()) {
-            List<KanjiDTO> allKanji = KanjiDAO.findByLevel(level);
+            KanjiDAO kanjiDAO = new KanjiDAO();
+            List<KanjiDTO> allKanji = kanjiDAO.findByLevel(level);
             groupKanji = StudyManager.getKanjiByGroup(allKanji, groupNumber);
 
             if (groupKanji.isEmpty()) {

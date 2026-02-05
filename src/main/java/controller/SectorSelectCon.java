@@ -43,7 +43,8 @@ public class SectorSelectCon extends HttpServlet {
         }
 
         // 해당 레벨의 전체 한자 개수 조회 (인메모리 캐시)
-        List<KanjiDTO> allKanji = KanjiDAO.findByLevel(level);
+        KanjiDAO kanjiDAO = new KanjiDAO();
+        List<KanjiDTO> allKanji = kanjiDAO.findByLevel(level);
         int totalKanji = (allKanji != null) ? allKanji.size() : 0;
 
         // request에 데이터 저장
