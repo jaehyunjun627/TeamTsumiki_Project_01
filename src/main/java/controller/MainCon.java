@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.LogDAO;
 import model.dto.AccountDTO;
+import model.dao.LogDAO;
 
 /**
  * MainCon.java - 메인 페이지 서블릿

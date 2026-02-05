@@ -51,7 +51,8 @@ public class StartGroupCon extends HttpServlet {
         }
 
         // 전체 한자 리스트 가져오기
-        List<KanjiDTO> allKanji = KanjiDAO.findByLevel(level);
+        KanjiDAO kanjiDAO = new KanjiDAO();
+        List<KanjiDTO> allKanji = kanjiDAO.findByLevel(level);
 
         // 해당 그룹의 한자 가져오기
         List<KanjiDTO> groupKanji = StudyManager.getKanjiByGroup(allKanji, groupNumber);

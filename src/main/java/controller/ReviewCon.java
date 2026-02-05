@@ -27,7 +27,8 @@ public class ReviewCon extends HttpServlet {
         int page = (pageParam == null) ? 1 : Integer.parseInt(pageParam);
 
         // 2️⃣ 레벨 전체 한자 가져오기
-        List<KanjiDTO> allList = KanjiDAO.findByLevel(level);
+        KanjiDAO kanjiDAO = new KanjiDAO();
+        List<KanjiDTO> allList = kanjiDAO.findByLevel(level);
 
         // 3️⃣ 페이지당 4개
         int pageSize = 4;
@@ -37,8 +38,12 @@ public class ReviewCon extends HttpServlet {
         List<KanjiDTO> pageList = allList.subList(start, end);
 
         // 4️⃣ JSP로 전달
+        boolean hasNext = end < allList.size();
         request.setAttribute("pageList", pageList);
         request.setAttribute("page", page);
+        request.setAttribute("currentPage", page);
+        request.setAttribute("level", level);
+        request.setAttribute("hasNext", hasNext);
 
         // 5️⃣ forward
         request.getRequestDispatcher("/WEB-INF/review.jsp")

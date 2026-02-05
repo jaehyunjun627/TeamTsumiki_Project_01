@@ -278,7 +278,7 @@ public class KanjiDAO {
         return KANJI_MAP.get(kanjiCode);
     }
 
-    public static List<KanjiDTO> findByLevel(String level) {
+    public List<KanjiDTO> findByLevel(String level) {
         String prefix = KanjiCodeUtil.levelPrefix(level);
         return KANJI_MAP.entrySet().stream()
                 .filter(e -> e.getKey().startsWith(prefix))

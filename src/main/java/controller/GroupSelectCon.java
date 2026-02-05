@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.StudyProgressDTO;
 import model.dao.KanjiDAO;
 import model.dto.KanjiDTO;
+import model.dto.StudyProgressDTO;
 import util.StudyManager;
 
 @WebServlet("/groupSelect")
@@ -45,7 +45,8 @@ public class GroupSelectCon extends HttpServlet {
         HttpSession session = request.getSession();
 
         // 해당 레벨의 전체 한자 가져오기
-        List<KanjiDTO> allKanji = KanjiDAO.findByLevel(level);
+        KanjiDAO kanjiDAO = new KanjiDAO();
+        List<KanjiDTO> allKanji = kanjiDAO.findByLevel(level);
         int totalGroups = StudyManager.getTotalGroups(allKanji);
 
         // 학습 진행 상태 가져오기 (없으면 생성)

@@ -60,7 +60,8 @@ public class KanjiStudyCon extends HttpServlet {
         }
 
         // 해당 레벨의 전체 한자 조회 (인메모리 캐시)
-        List<KanjiDTO> allKanji = KanjiDAO.findByLevel(level);
+        KanjiDAO kanjiDAO = new KanjiDAO();
+        List<KanjiDTO> allKanji = kanjiDAO.findByLevel(level);
 
         // 섹터에 해당하는 한자만 추출 (20개씩)
         int startIdx = (sector - 1) * KANJI_PER_SECTOR;
